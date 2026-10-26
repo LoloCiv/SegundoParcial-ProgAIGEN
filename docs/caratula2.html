@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carátula 2 Parcial 2</title>
+<!-- Segunda diapositiva de la introducción: modelos, agentes y skills. Abrir y poner F11. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Archivo:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  html, body { height: 100%; margin: 0; background: #eef1f6; }
+  body { display: grid; place-items: center; }
+  .stage {
+    width: min(100vw, 177.78vh); aspect-ratio: 16 / 9; container-type: inline-size;
+    background: #eef1f6; color: #111827; font-family: "Archivo", "Segoe UI", sans-serif;
+    display: grid; grid-template-columns: 50% 50%; align-items: center;
+  }
+  .text { padding-left: 7.3cqw; }
+  .eyebrow { display: flex; align-items: center; gap: 1.2cqw; font-weight: 700; font-size: 1.35cqw; letter-spacing: .14em; color: #4b5563; text-transform: uppercase; }
+  .eyebrow i { width: 1.05cqw; height: 1.05cqw; border-radius: 50%; background: #f2c230; display: block; }
+  h1 { font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-weight: 700; font-size: 6.6cqw; line-height: .98; margin: 2.2cqw 0 3cqw; }
+  h1 .blue { color: #1d4ed8; }
+  .points { display: grid; gap: 1.9cqw; border-top: .17cqw solid #111827; padding-top: 2.6cqw; width: 38cqw; }
+  .point { display: grid; grid-template-columns: 2.2cqw 1fr; gap: 1.2cqw; align-items: start; }
+  .point i { width: 1.5cqw; height: 1.5cqw; border-radius: 50%; margin-top: .45cqw; display: block; }
+  .point b { display: block; font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-size: 2.3cqw; line-height: 1.1; }
+  .point span { font-size: 1.55cqw; color: #4b5563; line-height: 1.35; }
+  .blue-dot { background: #1d4ed8; } .red-dot { background: #e0453a; } .yellow-dot { background: #f2c230; }
+
+  .players { display: grid; gap: 1.4cqw; justify-items: center; }
+  .vs { font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-weight: 700; font-size: 3.2cqw; color: #1d4ed8; line-height: 1; }
+  .card { width: 34cqw; background: #ffffff; border-radius: 1.6cqw; padding: 1.8cqw 2cqw; box-shadow: 0 1.4cqw 3cqw rgba(29,78,216,.14);
+    display: grid; grid-template-columns: 5.2cqw 1fr; gap: 1.6cqw; align-items: center; }
+  .disc { width: 5.2cqw; height: 5.2cqw; border-radius: 50%; }
+  .disc.r { background: #e0453a; box-shadow: inset 0 -.4cqw 0 #b02f26; }
+  .disc.y { background: #f2c230; box-shadow: inset 0 -.4cqw 0 #c79a12; }
+  .name { font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-weight: 700; font-size: 2.7cqw; line-height: 1; }
+  .meta { font-size: 1.3cqw; color: #4b5563; margin-top: .4cqw; }
+  .file { font-family: "JetBrains Mono", Consolas, monospace; font-size: 1.1cqw; color: #1d4ed8; margin-top: .9cqw; }
+  .chips { display: flex; flex-wrap: wrap; gap: .6cqw; margin-top: .9cqw; }
+  .chip { font-family: "JetBrains Mono", Consolas, monospace; font-size: 1cqw; padding: .35cqw .8cqw; border-radius: 99px; background: #e3eafc; color: #1e3a8a; }
+  .chip.style { background: #111827; color: #fff; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="text">
+    <div class="eyebrow"><i></i>Llama vs Qwen · Cómo funciona</div>
+    <h1>Dos agentes,<br><span class="blue">un tablero</span></h1>
+    <div class="points">
+      <div class="point"><i class="blue-dot"></i><div><b>Ollama</b><span>Modelos abiertos que corren en mi computadora, sin nube</span></div></div>
+      <div class="point"><i class="red-dot"></i><div><b>Agentes en .agent.md</b><span>Modelo y parámetros declarados en YAML</span></div></div>
+      <div class="point"><i class="yellow-dot"></i><div><b>Skills en .skill.md</b><span>Una personalidad que se cambia sin tocar código</span></div></div>
+    </div>
+  </div>
+  <div class="players">
+    <div class="card">
+      <div class="disc r"></div>
+      <div>
+        <div class="name">Llama 3</div>
+        <div class="meta">8 mil millones de parámetros · Meta</div>
+        <div class="file">jugador_llama.agent.md</div>
+        <div class="chips"><span class="chip">formato_jugada</span><span class="chip">analisis_amenazas</span><span class="chip style">agresivo</span></div>
+      </div>
+    </div>
+    <div class="vs">vs</div>
+    <div class="card">
+      <div class="disc y"></div>
+      <div>
+        <div class="name">Qwen 2.5</div>
+        <div class="meta">7 mil millones de parámetros · Alibaba</div>
+        <div class="file">jugador_qwen.agent.md</div>
+        <div class="chips"><span class="chip">formato_jugada</span><span class="chip">analisis_amenazas</span><span class="chip style">defensivo</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

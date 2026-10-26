@@ -1,0 +1,13 @@
+[project]
+name = "arena-agentes"
+version = "0.1.0"
+description = "Arena de agentes locales (Llama vs Qwen) jugando Cuatro en Línea con skills declarativas"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "ollama: requiere un servidor Ollama real con los modelos descargados (usar -m ollama)",
+]
+addopts = "-m 'not ollama'"

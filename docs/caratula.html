@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carátula Parcial 2</title>
+<!-- Abrir en el navegador y poner F11 (pantalla completa) para grabarla como diapositiva del video. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700&family=Archivo:wght@400;600;700&display=swap">
+<style>
+  html, body { height: 100%; margin: 0; background: #eef1f6; }
+  body { display: grid; place-items: center; }
+  .stage {
+    width: min(100vw, 177.78vh); aspect-ratio: 16 / 9; container-type: inline-size;
+    background: #eef1f6; color: #111827; font-family: "Archivo", "Segoe UI", sans-serif;
+    display: grid; grid-template-columns: 56% 44%; align-items: center; position: relative;
+  }
+  .text { padding-left: 7.3cqw; }
+  .eyebrow { display: flex; align-items: center; gap: 1.2cqw; font-weight: 700; font-size: 1.35cqw; letter-spacing: .14em; color: #4b5563; text-transform: uppercase; }
+  .eyebrow i { width: 1.05cqw; height: 1.05cqw; border-radius: 50%; background: #e0453a; display: block; }
+  h1 { font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-weight: 700; font-size: 8.4cqw; line-height: .98; margin: 2.4cqw 0 2cqw; letter-spacing: -.01em; }
+  h1 .blue { color: #1d4ed8; }
+  .sub { font-size: 2cqw; line-height: 1.45; color: #374151; max-width: 33cqw; margin: 0; }
+  hr { border: 0; border-top: .17cqw solid #111827; width: 46cqw; margin: 3.4cqw 0 2.6cqw; }
+  .author { font-family: "Archivo Narrow", "Arial Narrow", sans-serif; font-weight: 700; font-size: 3.4cqw; margin: 0; }
+  .career { font-size: 1.7cqw; color: #4b5563; margin: .5cqw 0 0; }
+  .board { justify-self: center; background: #1d4ed8; border-radius: 2.1cqw; padding: 1.4cqw; box-shadow: 0 2cqw 4cqw rgba(29,78,216,.22);
+    display: grid; grid-template-columns: repeat(7, 3.45cqw); gap: .9cqw; }
+  .cell { width: 3.45cqw; height: 3.45cqw; border-radius: 50%; background: #eef1f6; box-shadow: inset 0 .25cqw 0 #cbd2de; }
+  .cell.r { background: #e0453a; box-shadow: inset 0 -.3cqw 0 #b02f26; }
+  .cell.y { background: #f2c230; box-shadow: inset 0 -.3cqw 0 #c79a12; }
+  .cell.win { outline: .3cqw solid #fff; outline-offset: .1cqw; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="text">
+    <div class="eyebrow"><i></i>Programación con IA Generativa · Parcial 2</div>
+    <h1><span class="blue">Llama</span> vs<br>Qwen</h1>
+    <p class="sub">Dos agentes locales con Ollama juegan Cuatro en Línea, guiados por skills en Markdown</p>
+    <hr>
+    <p class="author">Laureano Civetta</p>
+    <p class="career">Ingeniería en Inteligencia Artificial</p>
+  </div>
+  <div class="board" id="board"></div>
+</div>
+<script>
+  // Partida de ejemplo, fila 0 arriba. r = Llama (rojo), y = Qwen (amarillo).
+  // Qwen gana con la diagonal resaltada.
+  var rows = [
+    ".......",
+    ".......",
+    ".....Y.",
+    "....YR.",
+    "...YRY.",
+    "YRYRRRY"
+  ];
+  var winning = ["2,5", "3,4", "4,3", "5,2"];
+  var board = document.getElementById("board");
+  rows.forEach(function (row, r) {
+    row.split("").forEach(function (ch, c) {
+      var cell = document.createElement("div");
+      cell.className = "cell" + (ch === "R" ? " r" : ch === "Y" ? " y" : "") + (winning.indexOf(r + "," + c) >= 0 ? " win" : "");
+      board.appendChild(cell);
+    });
+  });
+</script>
+</body>
+</html>
